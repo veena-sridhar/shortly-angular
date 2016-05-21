@@ -5,11 +5,11 @@
 			<li><a href='#/shorten'>Shorten</a></li>
  		</ul>
  	</div>
- 	<div class='link' ng-model='LinksController' ng-repeat='links in data'>
- 	{{data.links}}
-	 	<div class='visits'>Visits
-	 		<div class='count' ng-repeat='visits in links'></div>
-	 	</div>
-	 	<div class='title'>{{data.links.title}}</div>
+ 	<div class='link' ng-repeat='link in data.links'>
+ 	<!-- {{data.links}} -->
+	 	<div class='visits'>Visits<div class='count'>{{link.visits}}</div></div>
+	 	<div class='title'>{{link.title}}</div>
+	 	<div class='original'>{{link.url}}/</div>
+	 	<div class='info'>{{link.baseUrl}}/{{link.code}}</div>
  	</div>
 </div>

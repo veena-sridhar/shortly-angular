@@ -6,11 +6,17 @@
  		</ul>
  	</div>
  	<div>
- 		<form ng-submit='addLink()'>
- 			<input type='text' ng-model='link.url'></input>
- 			<button type='submit'>Add</button>
+ 		<form name='userForm' ng-submit='addLink()' novalidate>
+ 			<input type='url' ng-model='link.url' ng-class="{'error' : userForm.$invalid && !userForm.$pristine }"></input>
+ 			<button type='submit' ng-disable='userForm.$invalid'>Add</button>
+ 			<div ng-show='userForm.$invalid && !userForm.$pristine'>Please enter a valid url.</div>
  		</form>
  	</div>
 </div>
 
 
+<!-- <div class="form-group">
+  <label>Email</label>
+  <input type="email" name="email" class="form-control" ng-model="email">
+  <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+</div> -->
