@@ -1,3 +1,15 @@
 <div id='container'>
- {{LinksController}}
+	<div class='navigation'>
+		<ul>
+			<li><a href='#/links'>Links</a></li>
+			<li><a href='#/shorten'>Shorten</a></li>
+ 		</ul>
+ 	</div>
+ 	<div class='link' ng-model='LinksController' ng-repeat='links in data'>
+ 	{{data.links}}
+	 	<div class='visits'>Visits
+	 		<div class='count' ng-repeat='visits in links'></div>
+	 	</div>
+	 	<div class='title'>{{data.links.title}}</div>
+ 	</div>
 </div>

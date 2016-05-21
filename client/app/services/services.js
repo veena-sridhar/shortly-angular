@@ -1,8 +1,8 @@
 angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
-  var links = {};
-  links.getAll = function () {
+  var Links = {};
+  Links.getAll = function () {
     return $http({
       method: 'GET',
       url: '/api/links'
@@ -11,16 +11,16 @@ angular.module('shortly.services', [])
     });
   };
 
-  links.addOne = function (link) {
+  Links.addOne = function (link) {
     return $http({
       method: 'POST',
       url: '/api/links',
-      data: JSON.stringify(link)
+      data: link
     }).then(function (resp) {
       return resp;
     })
   };
-  return links;
+  return Links;
 
 })
 

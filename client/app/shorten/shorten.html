@@ -1,6 +1,16 @@
 <div id='container'>
-{{ShortenController}}
-
+	<div class='navigation'>
+		<ul>
+			<li><a href='#/links'>Links</a></li>
+ 			<li><a href='#/shorten'>Shorten</a></li>
+ 		</ul>
+ 	</div>
+ 	<div>
+ 		<form ng-submit='addLink()'>
+ 			<input type='text' ng-model='link.url'></input>
+ 			<button type='submit'>Add</button>
+ 		</form>
+ 	</div>
 </div>
 
 
